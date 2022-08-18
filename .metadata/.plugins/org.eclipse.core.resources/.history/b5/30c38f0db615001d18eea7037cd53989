@@ -1,0 +1,29 @@
+package resources;
+
+import java.net.URL;
+
+import org.testng.annotations.*;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
+
+public class Base {
+
+	AndroidDriver driver;
+	
+	
+	@BeforeClass
+	public void configApp() {
+	
+		
+		UiAutomator2Options cap = new UiAutomator2Options();
+		cap.setDeviceName("Viraj_Emulator");
+		cap.setApp("C:\\Users\\Viraj\\Desktop\\Appium\\Mobile_Automation\\src\\test\\java\\resources\\demo_ecommerce.apk");
+		AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"),cap);
+	}
+	
+	@AfterClass
+	public void terminate() {
+		
+	}
+}

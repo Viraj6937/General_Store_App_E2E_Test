@@ -1,0 +1,8 @@
+package PageObject;
+
+public class Cart_Page_Object {
+
+	public AndroidDriver driver;
+	
+	
+}

@@ -1,0 +1,27 @@
+package TestCase;
+
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import PageObject.Details_Page_Object;
+import resources.Base;
+
+public class Landing_Page_Test extends Base {
+
+	Details_Page_Object dpo;
+	
+	@Test
+	public void verify_app_is_launched(){
+ 
+		String toolBarTitle = dpo.getToolBarTitle().getText();
+		System.out.println(toolBarTitle);
+		Assert.assertEquals(toolBarTitle,"General Store");
+	}	
+	
+	@Test
+	public void verify_general_details_are_filled() {
+		
+	}
+	
+}

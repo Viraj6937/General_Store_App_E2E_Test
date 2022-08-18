@@ -1,0 +1,38 @@
+package PageObject;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class Details_Page_Object {
+
+
+	public AndroidDriver driver;
+	
+	
+	private By tool_bar_title = By.id("com.androidsample.generalstore:id/toolbar_title");
+	
+	private By countryDropDownOption = By.id("com.androidsample.generalstore:id/spinnerCountry");
+	
+	private By countryList = By.id("android:id/text1");
+	
+	private By nameField = By.id("com.androidsample.generalstore:id/nameField");
+	
+	
+	public WebElement getToolBarTitle() {
+		return driver.findElement(tool_bar_title);
+	}
+	
+	public WebElement getCountryDropDown() {
+		return driver.findElement(countryDropDownOption);
+	}
+	
+	public List<WebElement> getCountryList(){
+		return driver.findElements(countryList);
+	}
+	
+	
+}

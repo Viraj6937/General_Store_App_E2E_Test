@@ -1,0 +1,11 @@
+package resources;
+
+public class Base {
+
+	
+	@BeforeTest
+	public void configApp() {
+		
+	}
+	
+}

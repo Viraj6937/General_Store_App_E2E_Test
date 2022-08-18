@@ -1,0 +1,84 @@
+package TestCase;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import PageObject.Common_Page_Object;
+import PageObject.Details_Page_Object;
+import PageObject.Product_Page_Object;
+import io.appium.java_client.AppiumBy;
+import resources.Base;
+
+public class Landing_Page_Test extends Base {
+
+	Details_Page_Object dpo;
+	Common_Page_Object cpo;
+    Product_Page_Object ppo;
+	
+	
+	@Test
+	public void verify_app_is_launched(){
+ 
+		dpo = new Details_Page_Object(driver);
+		cpo = new Common_Page_Object(driver);
+		ppo = new Product_Page_Object(driver);
+		
+		String toolBarTitle = dpo.getToolBarTitle().getText();
+		System.out.println(toolBarTitle);
+		Assert.assertEquals(toolBarTitle,"General Store");
+	}	
+	
+	
+	@Test
+	public void verify_general_details_are_filled() {
+	
+		dpo = new Details_Page_Object(driver);
+		
+		cpo = new Common_Page_Object(driver);
+		
+		dpo.getCountryDropDown().click();
+		
+		
+		cpo.getSelectCountry("India");
+	    
+		dpo.getNameField().sendKeys("Viraj");
+		
+		List<WebElement> genderOptions = dpo.getGenderOptionList();
+		for(int j=0; j<genderOptions.size();j++) {
+			String optionVal = genderOptions.get(j).getText();
+			if(optionVal.equalsIgnoreCase("Male")) {
+				boolean maleOptionEnabled = genderOptions.get(0).isEnabled();
+				if(maleOptionEnabled) {
+					System.out.println("male option is already enabled");
+				}
+				else
+				{
+					genderOptions.get(0).click();
+					
+				}
+			}
+		}
+		
+		dpo.getLetShopSubmit().click();
+	}
+	
+	
+	@Test
+	public void verify_product_count() {
+
+        int count = 0;	   	
+		List<WebElement> products= ppo.getProductNameList();
+	   	for(int i=0;i<products.size();i++) {
+
+	   		products.get(i);
+	   	}
+	}
+	
+}

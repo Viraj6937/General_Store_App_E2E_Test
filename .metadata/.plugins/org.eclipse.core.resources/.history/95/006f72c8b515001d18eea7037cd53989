@@ -1,0 +1,21 @@
+package resources;
+
+import org.testng.annotations.*;
+
+public class Base {
+
+	AndroidDriver driver;
+	
+	
+	@BeforeClass
+	public void configApp() {
+	
+		
+		
+	}
+	
+	@AfterClass
+	public void terminate() {
+		
+	}
+}

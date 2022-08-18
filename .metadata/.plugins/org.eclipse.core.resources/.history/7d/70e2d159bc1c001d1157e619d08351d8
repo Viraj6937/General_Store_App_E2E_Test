@@ -1,0 +1,49 @@
+package TestCase;
+
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import PageObject.Details_Page_Object;
+import resources.Base;
+
+public class Landing_Page_Test extends Base {
+
+	Details_Page_Object dpo;
+	
+	@Test
+	public void verify_app_is_launched(){
+ 
+		String toolBarTitle = dpo.getToolBarTitle().getText();
+		System.out.println(toolBarTitle);
+		Assert.assertEquals(toolBarTitle,"General Store");
+	}	
+	
+	@Test
+	public void verify_general_details_are_filled() {
+	
+		dpo.getCountryDropDown().click();
+		
+		List<WebElement>options = dpo.getCountryList();
+		for(int i=0; i<options.size();i++) {
+			String textVal = options.get(i).getText();
+			if(textVal.equalsIgnoreCase("India")) {
+				options.get(i).click();
+				break;
+			}
+		}
+		
+		dpo.getNameField().sendKeys("Viraj");
+		
+		List<WebElement> genderOptions = dpo.getGenderOptionList();
+		for(int j=0; j<genderOptions.size();j++) {
+			String optionVal = genderOptions.get(j).getText();
+			if(optionVal.equalsIgnoreCase("Male")) {
+				genderOptions.get(0).click();
+			}
+		}
+	}
+}

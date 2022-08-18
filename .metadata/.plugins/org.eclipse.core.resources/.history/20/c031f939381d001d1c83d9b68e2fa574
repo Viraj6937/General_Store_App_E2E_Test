@@ -1,0 +1,18 @@
+package PageObject;
+
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+
+public class Product_Page_Object {
+
+	public AndroidDriver driver;
+	
+	private By productNameList = AppiumBy.className("com.androidsample.generalstore:id/productName");
+	
+	public List<WebElement> getProductNameList(){
+		return driver
+	}
+	
+	
+}

@@ -1,0 +1,22 @@
+package TestCase;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+import pageobject.Landing_Page_Object;
+import resources.Base;
+
+public class Landing_Page_Test extends Base {
+
+	public AndroidDriver driver;
+	Landing_Page_Object lpo;
+	
+	@Test
+	public void verify_app_is_launched() {
+		
+		lpo = new Landing_Page_Object(driver);
+		
+		lpo.getAppHeading();
+	}
+}

@@ -1,0 +1,26 @@
+package pageobject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+
+public class Landing_Page_Object {
+
+	public AndroidDriver driver;
+
+	private By brand_heading = By.xpath("//android.widget.TextView[@text='E-Commerce Android App']");
+
+	
+	public Landing_Page_Object(AndroidDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver = driver;
+	}
+
+	public void getAppHeading() {
+	     String appHeading = driver.findElement(brand_heading).getText();
+	     Assert.assertEquals(appHeading,"E-Commerce Android App");
+	}
+}

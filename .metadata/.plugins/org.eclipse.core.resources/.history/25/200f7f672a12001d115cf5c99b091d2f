@@ -1,0 +1,20 @@
+package TestCase;
+
+import java.net.URL;
+
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class FirstTest {
+	
+	@Test
+	public void runApp() {
+		
+		UIAutomator2 cap = new UIAutomator2();
+		
+		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"),cap);
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package PageObject;
+
+import org.openqa.selenium.By;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class Cart_Page_Object {
+
+	public AndroidDriver driver;
+	
+	private By added_product_Name_List = By.id("com.androidsample.generalstore:id/productName");
+	
+	
+	public List<WebElement> get_product_name_list(){
+		
+	}
+	
+}

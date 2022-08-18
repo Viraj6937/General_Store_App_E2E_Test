@@ -1,0 +1,13 @@
+package resources;
+
+import org.testng.annotations.BeforeTest;
+
+public class Base {
+
+	
+	@BeforeTest
+	public void configApp() {
+		
+	}
+	
+}

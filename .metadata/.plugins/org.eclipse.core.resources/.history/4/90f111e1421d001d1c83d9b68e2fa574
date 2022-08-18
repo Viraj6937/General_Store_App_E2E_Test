@@ -1,0 +1,42 @@
+package PageObject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import com.google.common.collect.ImmutableMap;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+
+public class Common_Page_Object {
+
+	public AndroidDriver driver;
+	
+	public Common_Page_Object(AndroidDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver = driver;
+	}
+
+	public void getWindowScroll() {
+		boolean canScrollMore driver.executeScript("mobile:scrollGesture",ImmutableMap.of("left",100,"top",100,"width",200,"height",200,"direction","down","percent",3.0));
+	}
+
+	
+	public void getSelectCountry(String countryName) {
+		
+		switch(countryName) {
+		
+		case "India":
+			driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"India\"));"));	
+			driver.findElement(By.xpath("//android.widget.TextView[@text='India']")).click();
+			break;
+		
+		default:
+			   System.out.println("Invalid country defined");
+			
+		}
+		
+	}
+	
+	
+}

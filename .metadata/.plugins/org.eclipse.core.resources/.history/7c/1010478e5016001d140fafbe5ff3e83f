@@ -1,0 +1,60 @@
+package TestCase;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.options.UiAutomator2Options;
+
+public class FirstTest extends Base {
+	
+	@Test
+	public void runApp() throws MalformedURLException {
+		
+		//AppiumDriverLocalService service = AppiumServerBuilder().withAppiumJs("C:\Users\Viraj\AppData\Roaming\npm\node_modules\appium\build\lib\main.js").withIPAddress("0.0.0.0").usingPort(4723).build();
+		//service.start();
+		
+		UiAutomator2Options cap = new UiAutomator2Options();
+		cap.setDeviceName("Viraj_Emulator");
+		cap.setApp("C:\\Users\\Viraj\\Desktop\\Appium\\Mobile_Automation\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+		AndroidDriver driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"),cap);
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Preference']")).click();
+	
+		driver.findElement(By.xpath("//android.widget.TextView[@text='3. Preference dependencies']")).click();
+		
+		driver.findElement(By.id("android:id/checkbox")).click();
+		
+		boolean wifiEnabled = driver.findElements(AppiumBy.className("android.widget.LinearLayout")).get(2).isEnabled();
+		if(wifiEnabled) {
+		   driver.findElements(AppiumBy.className("android.widget.LinearLayout")).get(2).click();
+		}
+		else
+		{
+			driver.findElement(By.id("android:id/checkbox")).click();
+			driver.findElement(By.id("android:id/checkbox")).isEnabled();
+			driver.findElements(AppiumBy.className("android.widget.LinearLayout")).get(2).click();
+		}
+		
+		String popupVal = driver.findElement(By.xpath("//android.widget.TextView[@text='WiFi settings']")).getText();
+		System.out.println(popupVal);
+		if(popupVal.contains("WiFi settings")) {
+		   driver.findElement(By.id("android:id/edit")).sendKeys("Test");
+		   
+		}
+		
+		String buttonVal = driver.findElements(AppiumBy.className("android.widget.Button")).get(1).getText();
+		if(buttonVal.equals("OK")) {
+			driver.findElements(AppiumBy.className("android.widget.Button")).get(1).click();
+		}
+		
+		//service.stop();
+				
+	}
+
+}

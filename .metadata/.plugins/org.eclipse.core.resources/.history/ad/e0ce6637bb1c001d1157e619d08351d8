@@ -1,0 +1,16 @@
+package TestCase;
+
+
+import org.testng.annotations.Test;
+
+import resources.Base;
+
+public class Landing_Page_Test extends Base {
+
+	
+	@Test
+	public void verify_app_is_launched(){
+
+     	
+	}	
+}

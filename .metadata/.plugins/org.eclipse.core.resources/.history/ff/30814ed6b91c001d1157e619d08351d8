@@ -1,0 +1,18 @@
+package PageObject;
+
+import org.openqa.selenium.By;
+
+public class Details_Page_Object {
+
+
+	public AndroidDriver driver;
+	
+	private By countryDropDownOption = By.id("com.androidsample.generalstore:id/spinnerCountry");
+	
+	
+	public WebElement getCountryDropDown() {
+		return driver.
+	}
+	
+	
+}

@@ -1,0 +1,43 @@
+package pageobject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import io.appium.java_client.android.AndroidDriver;
+
+public class Common_Page_Object {
+
+	public AndroidDriver driver;
+	
+	private By email_id_field = By.id("in.co.rkdigi.user:id/etxLoginEmail");
+	
+	private By password_field = By.id("in.co.rkdigi.user:id/etxLoginPass");
+	
+	private By sign_in_button = By.id("in.co.rkdigi.user:id/btnLogin");
+	
+	private By forgot_password_link = By.xpath("//android.widget.TextView[@text='Forgot Password ?']");
+	
+	private By registration_link = By.xpath("//android.widget.TextView[@text='New User ? Register Here']");
+	
+	private By registration_name_field = By.xpath("");
+	
+	private By registration_email_address_field = By.xpath("");
+	
+	private By registration_mobile_number_field = By.xpath("");
+	
+	private By registration_password_field = By.xpath("");
+	
+	private By registration_confirm_password_field = By.xpath("");
+	
+	private By registration_sign_up_button = By.xpath("");
+	
+	private By skip_now_link = By.xpath("");
+	
+	
+	public WebElement getEmailField() {
+		return driver.findElement(email_id_field);
+	}
+	
+	
+	
+}

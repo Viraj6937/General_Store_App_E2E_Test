@@ -1,0 +1,24 @@
+package PageObject;
+
+
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import io.appium.java_client.android.AndroidDriver;
+
+public class Product_Page_Object {
+
+	public AndroidDriver driver;
+	
+	private By productNameList = By.id("com.androidsample.generalstore:id/productName");
+	
+	public Product_Page_Object(AndroidDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver=driver;
+	}
+
+	public List<WebElement> getProductNameList(){
+		return driver.findElements(productNameList);
+	}
+		
+}

@@ -1,0 +1,18 @@
+package TestCase;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+import pageobject.Landing_Page_Object;
+import resources.Base;
+
+public class Landing_Page_Test extends Base {
+
+	@Test
+	public void verify_app_is_launched() {
+		
+	
+	}
+}

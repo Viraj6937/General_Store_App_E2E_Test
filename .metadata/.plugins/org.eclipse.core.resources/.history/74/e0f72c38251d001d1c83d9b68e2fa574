@@ -1,0 +1,13 @@
+package PageObject;
+
+import org.openqa.selenium.WebElement;
+
+public class Common_Page_Object {
+
+	public AndroidDriver driver;
+	
+	public void getWindowScroll(WebElement element) {
+		
+	}
+	
+}
